@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new AddButtonClickHandler());
     }
     public static double GPA(String a, String b){
-        double gp = 0;
+        double gp = 0.0;
         if(!a.equals("HAP")){
             if(a.equalsIgnoreCase("R")){
                 switch(b){
