@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     EditText g1;
@@ -25,47 +26,33 @@ public class MainActivity extends AppCompatActivity {
     EditText g8;
     EditText w8;
     Button add;
+    TextView result;
     int sum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         g1 = (EditText)findViewById(R.id.editText4);
-        String gr1 = g1.getText().toString();
         w1 = (EditText)findViewById(R.id.editText13);
-        String we1 = w1.getText().toString();
         g2 = (EditText)findViewById(R.id.editText5);
-        String gr2 = g2.getText().toString();
         w2 = (EditText)findViewById(R.id.editText25);
-        String we2 = w2.getText().toString();
         g3 = (EditText)findViewById(R.id.editText6);
-        String gr3 = g3.getText().toString();
         w3 = (EditText)findViewById(R.id.editText18);
-        String we3 = w3.getText().toString();
         g4 = (EditText)findViewById(R.id.editText7);
-        String gr4 = g4.getText().toString();
         w4 = (EditText)findViewById(R.id.editText19);
-        String we4 = w4.getText().toString();
         g5 = (EditText)findViewById(R.id.editText8);
-        String gr5 = g5.getText().toString();
         w5 = (EditText)findViewById(R.id.editText20);
-        String we5 = w5.getText().toString();
         g6 = (EditText)findViewById(R.id.editText9);
-        String gr6 = g6.getText().toString();
         w6 = (EditText)findViewById(R.id.editText22);
-        String we6 = w6.getText().toString();
         g7 = (EditText)findViewById(R.id.editText10);
-        String gr7 = g7.getText().toString();
         w7 = (EditText)findViewById(R.id.editText23);
-        String we7 = w7.getText().toString();
         g8 = (EditText)findViewById(R.id.editText12);
-        String gr8 = g8.getText().toString();
         w8 = (EditText)findViewById(R.id.editText24);
-        String we8 = w8.getText().toString();
         add = (Button)findViewById(R.id.button);
+        result = (TextView) findViewById(R.id.textView2);
         add.setOnClickListener(new AddButtonClickHandler());
     }
-    public static double GPA(String b, String a){
+    public static double GPA(String a, String b){
         double gp = 0;
         if(!a.equals("HAP")){
             if(a.equalsIgnoreCase("R")){
@@ -178,7 +165,9 @@ public class MainActivity extends AppCompatActivity {
 
     public class AddButtonClickHandler implements View.OnClickListener {
         public void onClick(View view) {
-            int counter  = 0;
+            double counter  = 0.0;
+            TextView result;
+            result = (TextView) findViewById(R.id.textView2);
             String gr1 = g1.getText().toString();
             String we1 = w1.getText().toString();
             String gr2 = g2.getText().toString();
@@ -203,12 +192,15 @@ public class MainActivity extends AppCompatActivity {
             counter+=GPA(gr6,we6);
             counter+=GPA(gr7,we7);
             counter+=GPA(gr8,we8);
-            double  gpa = counter/40;
-            Intent explicitIntent = new Intent(MainActivity.this,
+            double  gpa = counter/40.0;
+            String stringdouble= Double.toString(gpa);
+            String a =  " "+gpa;
+            result.setText(a);
+           /* Intent explicitIntent = new Intent(MainActivity.this,
                     SecondActivity.class);
             explicitIntent.putExtra("SUM", gpa);
             startActivity(explicitIntent);
-
+*/
         }
     }
 }
