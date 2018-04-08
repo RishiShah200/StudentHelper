@@ -204,4 +204,24 @@ public class MainActivity extends AppCompatActivity {
 */
         }
     }
+    public void resetScore (View V){
+        g1.setText("");
+        w1.setText("");
+        g2.setText("");
+        w2.setText("");
+        g3.setText("");
+        w3.setText("");
+        g4.setText("");
+        w4.setText("");
+        g5.setText("");
+        w5.setText("");
+        g6.setText("");
+        w6.setText("");
+        g7.setText("");
+        w7.setText("");
+        g8.setText("");
+        w8.setText("");
+        result.setText("");
+
+    }
 }
