@@ -98,6 +98,7 @@
         android:ems="10"
         android:hint="Class Type"
         android:inputType="textPersonName"
+        android:singleLine="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText9" />
 
@@ -216,6 +217,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="4dp"
+        android:background="#98f5ff"
+        android:fontFamily="@font/bungee"
         android:onClick="AddButtonClickHandler"
         android:text="Calculate GPA!"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -229,9 +232,11 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="8dp"
-        android:text='For class type please enter "R,H,A". For letter grade enter letter grade'
+        android:text='For class type please enter "R,H,AP" (Regular, Honors, AP). For letter grade enter "A,B+,C,etc."'
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="15dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -239,14 +244,22 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
+        android:layout_width="0dp"
+        android:layout_height="50sp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        android:textAlignment="center"
+        android:textColor="#12110e"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText12"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
 </ScrollView>

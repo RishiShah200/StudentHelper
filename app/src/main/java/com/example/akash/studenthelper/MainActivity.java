@@ -193,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
             counter+=GPA(gr7,we7);
             counter+=GPA(gr8,we8);
             double  gpa = counter/40.0;
+            gpa = Math.round(gpa*1000.0)/1000.0;
             String stringdouble= Double.toString(gpa);
             String a =  " "+gpa;
             result.setText(a);
